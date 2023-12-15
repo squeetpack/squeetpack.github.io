@@ -1,1 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SQUEETPACK!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!-- css for hover cards -->  
+<style> 
+
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Julius+Sans+One&display=swap');
+*{
+  padding:0;
+  margin:0;
+}
+body{
+  background-image:url(https://images.unsplash.com/photo-1583121358977-98c0a70698b7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
+  background-attachment:fixed;
+  background-size:cover;
+  background-position:center center;
+  box-sizing:border-box;
+  font-family: 'Andika', sans-serif;
+}
+body:before{
+  content:'';
+  background-color:rgb(0 0 0 / 0.7);
+  position:absolute;
+  height:100%;
+  width:100%;
+  left:0;
+  top:0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Julius Sans One', sans-serif;
+  margin-bottom:20px;
+}
+.container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  z-index:2;
+  height:100vh;
+}
+.container .card{
+  vertical-align:top;
+  width:280px;
+  height:450px;
+  position:relative;
+  margin:30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+  border-radius:25px;
+  background-color:rgba(255,255,255, 0.1);
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  backdrop-filter:blur(5px);
+  text-align:center;
+}
+.card .content{
+  padding:20px;
+  transition:0.8s all ease;
+  color:#ccc;
+  transform:translateY(200px);
+  opacity:0;
+}
+.card:hover .content{
+  transform:translateY(0px);
+  opacity:1;
+}
+.card img{
+  position:absolute;
+  filter: invert(82%) sepia(60%) saturate(2929%) hue-rotate(353deg) brightness(105%) contrast(103%);
+  width:140px;
+  top:50px;
+  opacity:0.2;
+  z-index:-1;
+}
+h1{
+  color:#fff;
+  text-align:center;
+  z-index:9;
+  position:relative;
+  margin-bottom:-20px;
+  padding-bottom:0;
+  padding-top:20px;
+  font-weight:400;
+}
+.card .content h2{
+  color:#fff;
+  font-weight:400;
+}
+.card .content a{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  padding:8px 30px 11px;
+  border:2px solid #fff;
+  text-transform:uppercase;
+  color:#fff;
+  border-radius:50px;
+  box-shadow: 0px 5px 50px rgba(0,0,0,0.8);
+  transition:0.8s all ease;
+}
+.card .content a:hover{
+  background: #9C27B0;
+}
+
+
+
+@media only screen and (max-width:900px) {
+  .container{
+    display:block;
+  }
+}
+
+</style>
+  
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+
+  
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+
+  
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://squeetpack.github.io/header%20image%20forest.png");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="https://squeetpack.github.io" class="w3-bar-item w3-button w3-wide">HOME</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">PACKS</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> spacer</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> spacer</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> spacer</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> spacer</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">PACKS</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">spacer</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">spacer</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">spacer</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">spacer</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Nightmares and spells!</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Nightmares and spells!</span><br>
+    <span class="w3-large">There are currently three packs to choose from.</span>
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+
+  </div>
+</header>
+
+
+<body>
+<!-- hover cards -->
+
+<h1>beautiful hover card</h1>
+<div class="container">
+  <div class="card">
+    <img src="">
+    <div class="content">
+      <h2>MUSSELS SOUP</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <a href="#">Order Now</a>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="https://image.flaticon.com/icons/png/512/604/604819.png">
+    <div class="content">
+      <h2>GRILLED FISH</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <a href="#">Order Now</a>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="https://image.flaticon.com/icons/png/512/604/604818.png">
+    <div class="content">
+      <h2>CHICKEN BURGER</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <a href="#">Order Now</a>
+    </div>
+  </div>
+</div>
+
+
+Resources
+
+
+
+  <div class="w3-container">
+  <h2>Packs</h2>
+    
+  <div class="w3-card-4" style="width:50%">
+    <a href="https://squeetpack.github.io/ages"><img src="https://raw.githubusercontent.com/squeetpack/squeetpack.github.io/main/Shaders.jpg" alt="Ages" style="width:100%">
+    <div class="w3-container w3-center">
+      <p>Squeet Magica Ages</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-card-4" style="width:50%">
+    <a href="https://squeetpack.github.io/squeet"><img src="https://raw.githubusercontent.com/squeetpack/squeetpack.github.io/main/Shaders.jpg" alt="Ages" style="width:100%">
+    <div class="w3-container w3-center">
+      <p>Squeet Magica 1.7.10</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-card-4" style="width:50%">
+    <a href="https://squeetpack.github.io/fear"><img src="https://raw.githubusercontent.com/squeetpack/squeetpack.github.io/main/Shaders.jpg" alt="Ages" style="width:100%">
+    <div class="w3-container w3-center">
+      <p>Fear of the Dark</p>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
